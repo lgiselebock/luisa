@@ -1,8 +1,8 @@
 baseURL = "/"
 theme = "hugo-apero"
-languageCode = "en"
-title = "Hugo Apéro"
-author = "Alison Hill"
+languageCode = "pt"
+title = "Luisa Böck"
+author = "Luisa Gisele Böck"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
 disqusShortname = "" # see params.utterances to use utterances instead of Disqus
@@ -18,19 +18,19 @@ enableEmoji = true
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]
     unsafe = true  # Enable user to embed HTML snippets in Markdown content.
-    hardwraps = false 
+    hardwraps = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 2
     ordered = false
   [markup.highlight]
-    # one of: https://xyproto.github.io/splash/docs/ 
+    # one of: https://xyproto.github.io/splash/docs/
     style = "github"
-    
+
 [params]
-  orgName = "RStudio"
-  orgLocal = "Anywhere"
-  description = "A modern, beautiful, and easily configurable blog theme for Hugo."
+  orgName = "Luisa Böck"
+  orgLocal = "Santa Maria, RS"
+  description = "Página pessoal de Luisa Gisele Böck"
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
   mainSections = ["blog", "project", "talk"]
@@ -39,30 +39,30 @@ enableEmoji = true
   # configure social icons and links below in [[params.social]]
   socialInHeader = false
   socialInFooter = true
-  # Default image for social sharing and search engines. 
+  # Default image for social sharing and search engines.
   # Place image file in `static` folder and specify image name here.
   sharing_image = "/img/papillons.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
-  twitter = "apreshill"
-  
+  twitter = "lgiselebock"
+
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
-  #         poppy / sky / violet / water 
-  theme = "sky"
-  
+  #         poppy / sky / violet / water
+  theme = "violet"
+
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "" 
-  
+  custom_theme = ""
+
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
   # sans-serif options: Commissioner / Atkinson Hyperlegible / Metropolis
   # if you import your own fonts, name them here too
   customtextFontFamily = "Commissioner"
-  customheadingFontFamily = "Fraunces"
+  customheadingFontFamily = "Metropolis"
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
   textFontFamily = "sans-serif"
@@ -71,14 +71,14 @@ enableEmoji = true
   # Configuration of https://utteranc.es/ for comments
   [params.utterances]
     use_utterances = true
-    repo_name = "apreshill/apero"
+    repo_name = "lgiselebock/luisa"
     issue_term = "pathname" # url, pathname, or title
     theme = "boxy-light"
     label = "comments :crystal_ball:"
 
   # Configuration of math rendering
   [params.math]
-    renderer = "katex" # one of "mathjax" / "katex" 
+    renderer = "katex" # one of "mathjax" / "katex"
 
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
@@ -88,31 +88,27 @@ enableEmoji = true
   [[params.social]]
       icon      = "github" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://github.com/apreshill/apero"
+      url       = "https://github.com/lgiselebock"
   [[params.social]]
       icon      = "facebook-square" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://www.facebook.com/hashtag/ap%C3%A9ro"
+      url       = "https://www.facebook.com/luisagiselebock"
   [[params.social]]
       icon      = "instagram" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://www.instagram.com/explore/tags/apero/"
+      url       = "https://www.instagram.com/lgiselebock/"
   [[params.social]]
       icon      = "twitter" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://twitter.com/hashtag/apéro"
+      url       = "https://twitter.com/lgiselebock"
   [[params.social]]
-      icon      = "impactstory" # icon name without the 'fa-'
-      icon_pack = "ai"
-      url       = "https://impactstory.org/u/0000-0002-8082-1890"
+      icon      = "envelope" # icon name without the 'fa-'
+      icon_pack = "far"
+      url       = "mailto:luisagisele@gmail.com"
   [[params.social]]
-      icon      = "orcid" # icon name without the 'fa-'
-      icon_pack = "ai"
-      url       = "http://orcid.org/0000-0002-8082-1890"
-  [[params.social]]
-      icon      = "rss" # icon name without the 'fa-'
-      icon_pack = "fas"
-      url       = "/blog/index.xml"
+      icon      = "chart-bar" # icon name without the 'fa-'
+      icon_pack = "far"
+      url       = "https://public.tableau.com/app/profile/lgiselebock"
 
 [taxonomies]
   category = "categories"
@@ -120,9 +116,9 @@ enableEmoji = true
   tag = "tags"
 
 [menu]
-  # Configure header 
+  # Configure header
   [[menu.header]]
-    name = "About"
+    name = "Luisa"
     title = "About Blogophonic"
     url = "/about/"
     weight = 1
@@ -146,30 +142,15 @@ enableEmoji = true
     title = "A collection"
     url = "/collection/"
     weight = 5
-  [[menu.header]]
-    name = "Elements"
-    title = "Element Page"
-    url = "/elements/"
-    weight = 6
-    
-  # Configure footer  
+
+  # Configure footer
   [[menu.footer]]
     name = "License"
     title = "License"
     url = "/license/"
     weight = 1
-  [[menu.footer]]
-    name = "Contact"
-    title = "Contact form"
-    url = "/contact/"
-    weight = 2
-  [[menu.footer]]
-    name = "Contributors"
-    title = "Contributors"
-    url = "/contributors/"
-    weight = 3
 
-# see https://gohugo.io/about/hugo-and-gdpr/    
+# see https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
   [privacy.disqus]
     disable = false
