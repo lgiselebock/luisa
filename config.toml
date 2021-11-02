@@ -1,7 +1,7 @@
-baseURL = "/"
+baseURL = "https://luisa.rbind.io/"
 theme = "hugo-apero"
 languageCode = "pt"
-title = "Luisa Böck"
+title = "Luisa Gisele Böck"
 author = "Luisa Gisele Böck"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -29,7 +29,7 @@ enableEmoji = true
 
 [params]
   orgName = "Luisa Böck"
-  orgLocal = "Santa Maria, RS"
+  orgLocal = ""
   description = "Página pessoal de Luisa Gisele Böck"
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
@@ -90,14 +90,6 @@ enableEmoji = true
       icon_pack = "fab"
       url       = "https://github.com/lgiselebock"
   [[params.social]]
-      icon      = "facebook-square" # icon name without the 'fa-'
-      icon_pack = "fab"
-      url       = "https://www.facebook.com/luisagiselebock"
-  [[params.social]]
-      icon      = "instagram" # icon name without the 'fa-'
-      icon_pack = "fab"
-      url       = "https://www.instagram.com/lgiselebock/"
-  [[params.social]]
       icon      = "twitter" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://twitter.com/lgiselebock"
@@ -119,7 +111,7 @@ enableEmoji = true
   # Configure header
   [[menu.header]]
     name = "Luisa"
-    title = "About Blogophonic"
+    title = "Luisa"
     url = "/about/"
     weight = 1
   [[menu.header]]
@@ -129,7 +121,7 @@ enableEmoji = true
     weight = 2
   [[menu.header]]
     name = "Projects"
-    title = "Project Portfolio"
+    title = "Project"
     url = "/project/"
     weight = 3
   [[menu.header]]
