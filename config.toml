@@ -32,7 +32,7 @@ enableEmoji = true
   orgLocal = ""
   description = "Página pessoal de Luisa Gisele Böck"
   favicon = "/img/favicon.ico"
-  logo = "/img/blogophonic-mark-dark.png"
+  logo = "/img/logo.png"
   mainSections = ["blog", "project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -110,29 +110,29 @@ enableEmoji = true
 [menu]
   # Configure header
   [[menu.header]]
+    name = "Home"
+    title = "Home"
+    url = "/"
+    weight = 1
+  [[menu.header]]
     name = "Luisa"
     title = "Luisa"
     url = "/about/"
-    weight = 1
+    weight = 2
   [[menu.header]]
     name = "Blog"
     title = "Blog"
     url = "/blog/"
-    weight = 2
+    weight = 3
   [[menu.header]]
     name = "Projects"
     title = "Project"
     url = "/project/"
-    weight = 3
+    weight = 4
   [[menu.header]]
     name = "Talks"
     title = "Talks"
     url = "/talk/"
-    weight = 4
-  [[menu.header]]
-    name = "A collection"
-    title = "A collection"
-    url = "/collection/"
     weight = 5
 
   # Configure footer
