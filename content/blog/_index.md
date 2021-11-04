@@ -9,20 +9,25 @@ cascade:
     show_sidebar_adunit: false
     text_link_label: View recent posts
     text_link_url: /blog/
-description: "\n"
+description: "Uma pequena coleção das minhas escritas. \n"
 layout: list-sidebar
 show_author_byline: true
 show_post_date: true
 show_post_thumbnail: true
 sidebar:
   author: Luísa Gisele Böck
-  description: "This is a fully featured blog that supports categories,\ntags, series,
-    and pagination. Even this sidebar offers \na ton of customizations.\n\nCheck out
-    the _index.md file in the /blog folder \nto edit this content. \n"
+  description: "... é como escrever uma carta de amor e endereçá-la '*a quem interessar possa*'. \" 
+  
+  **Ken Haemer** 
+  
+  
+  Uma pequena coleção das minhas escritas. \n"
+  
+  
   show_sidebar_adunit: true
   text_link_label: 
   text_link_url: /index.xml
-  title: A Sidebar for Your Thoughts
+  title: \"Elaborar uma apresentação sem levar o público em consideração...
 thumbnail_left: true
 title: Blog
 ---
