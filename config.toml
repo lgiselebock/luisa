@@ -33,7 +33,7 @@ enableEmoji = true
   description = "Página pessoal de Luisa Gisele Böck"
   favicon = "/img/favicon.ico"
   logo = "/img/logo.png"
-  mainSections = ["blog", "project", "talk"]
+  mainSections = ["blog"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -124,11 +124,6 @@ enableEmoji = true
     title = "Blog"
     url = "/blog/"
     weight = 3
-  [[menu.header]]
-    name = "Projects"
-    title = "Project"
-    url = "/project/"
-    weight = 4
 
   # Configure footer
   [[menu.footer]]
