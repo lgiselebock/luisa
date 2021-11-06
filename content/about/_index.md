@@ -5,7 +5,7 @@ description: |
   Olá! :)
 show_header: false
 sidebar_left: true
-title: Luísa Gisele Böck
+title: Luísa
 ---
 
 ** index doesn't contain a body, just front matter above.
