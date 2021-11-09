@@ -127,8 +127,8 @@ enableEmoji = true
 
   # Configure footer
   [[menu.footer]]
-    name = "License"
-    title = "License"
+    name = "Licença"
+    title = "Licença de uso"
     url = "/license/"
     weight = 1
 
