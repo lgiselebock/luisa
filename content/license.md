@@ -9,6 +9,14 @@ title: Licença de uso
 
 <center><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png"></center>
 
-<p>Estes conteúdos são protegidos pela licença Creative Commons Atribuição-CompartilhaIgual (CC BY-SA), ou seja, é possível que você compartilhe e adapte estes materiais mediante <b>atribuição dos créditos para as pessoas autoras e adição de um link que direcione para o material original</b>, além disso, é necessário que o seu material também possua este mesmo tipo de licença.</p>
+<br>
+<br>
+<br>
+
+<div style="text-align: justify">
+
+<p>Os conteúdos deste blog são protegidos pela licença Creative Commons Atribuição-CompartilhaIgual (CC BY-SA), ou seja, é possível que você compartilhe e adapte estes materiais mediante <b>atribuição dos créditos para as pessoas autoras e adição de um link que direcione para o material original</b>, além disso, é necessário que o seu material também possua este mesmo tipo de licença.</p>
+
+<br>
 
 <p>Para maiores informações, acesse <a href='https://br.creativecommons.net/licencas/'>Creative Commons</a>.</p>
