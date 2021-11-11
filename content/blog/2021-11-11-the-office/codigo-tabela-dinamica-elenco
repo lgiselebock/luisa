@@ -1,0 +1,34 @@
+
+TABELA DINÂMICA COM O NOME DOS ATORES E DOS PERSONAGENS
+
+
+```{r elenco-tab, echo = FALSE}
+theoffice_dados %>%
+  separate(col = elenco,
+           into = c("elenco_01", "elenco_02", "elenco_03", "elenco_04", "elenco_05", "elenco_06", "elenco_07",
+                    "elenco_08", "elenco_09", "elenco_10", "elenco_11", "elenco_12", "elenco_13", "elenco_14",
+                    "elenco_15", "elenco_16", "elenco_17", "elenco_18", "elenco_19", "elenco_20", "elenco_21",
+                    "elenco_22", "elenco_23", "elenco_24", "elenco_25", "elenco_26", "elenco_27", "elenco_28",
+                    "elenco_29", "elenco_30", "elenco_31", "elenco_32", "elenco_33", "elenco_34", "elenco_35",
+                    "elenco_36", "elenco_37", "elenco_38", "elenco_39", "elenco_40", "elenco_41", "elenco_42",
+                    "elenco_43", "elenco_44", "elenco_45", "elenco_46", "elenco_47", "elenco_48", "elenco_49",
+                    "elenco_50", "elenco_51", "elenco_52", "elenco_53", "elenco_54", "elenco_55", "elenco_56",
+                    "elenco_57", "elenco_58", "elenco_59", "elenco_60", "elenco_61", "elenco_62", "elenco_63",
+                    "elenco_64", "elenco_65", "elenco_66", "elenco_67", "elenco_68", "elenco_69", "elenco_70",
+                    "elenco_71", "elenco_72", "elenco_73", "elenco_74", "elenco_75", "elenco_76", "elenco_77",
+                    "elenco_78"),
+           sep = ", ") %>%
+  select(episodio, titulo, starts_with("elenco")) %>%
+  pivot_longer(cols = starts_with("elenco"),
+               names_to = "elenco_num",
+               values_to = "elenco_nome") %>%
+  count(elenco_nome) %>%
+  arrange(desc(n)) %>%
+  drop_na() %>%
+  inner_join(theoffice_personagens, by = "elenco_nome") %>%
+  select(elenco_nome, personagem_ns, n) %>%
+  DT::datatable(
+    colnames = c("Ator/Atriz", "Personagem(ns)", "Quantidade de episódios"),
+    caption = "Tabela 1: Quantidade de episódios em que cada ator está creditado"
+  )
+```
