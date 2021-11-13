@@ -20,7 +20,7 @@ knitr::opts_chunk$set(message = FALSE,	warning = FALSE, fig.align = "center")
 
 ```{r xaringan-panelset, echo = FALSE}
 xaringanExtra::use_clipboard()
-# xaringanExtra::use_panelset()
+xaringanExtra::use_panelset()
 ```
 
 ```{r, echo = FALSE, fig.align = "center"}
