@@ -1,8 +1,8 @@
 ---
-title: "Analise de The Office"
-subtitle: "How to add panelsets in plain markdown posts."
+title: "That's what the numbers said!"
+subtitle: "O quê os números dizem sobre uma das séries de comédia mais famosas do século XXI?"
 excerpt: "O quê os números dizem sobre uma das séries de comédia mais famosas do século XXI? Foi esta pergunta que eu tentei responder em meu trabalho de conclusão do curso [**R para Ciência de Dados I**](https://blog.curso-r.com/posts/2020-12-03-dicas-relatorios-r4ds1_tabelas/) da [Curso-R](https://curso-r.com/)."
-date: 2021-11-11
+date: 2021-11-13
 author: "Luísa Gisele Böck"
 draft: false
 # layout options: single, single-sidebar
@@ -22,7 +22,7 @@ tags:
 
 
 
-<img src="gay-witch-hunt-featured.jpg" width="540" style="display: block; margin: auto;" />
+<img src="gay-witch-hunt-featured.jpg" style="display: block; margin: auto;" />
 
 <div style="text-align: right">
 
@@ -45,7 +45,8 @@ library(tidyverse)
 theoffice_dados <- readr::read_rds("data/theoffice_dados.rds")
 theoffice_personagens <- readr::read_rds("data/theoffice_personagens.rds")
 
-extrafont::loadfonts(device = "win") # lê a tabela de fontes e registra no R
+# lê a tabela de fontes e registra no R (somente para usuários de Windows)
+# extrafont::loadfonts(device = "win") 
 ```
 
 ### A Série
@@ -65,10 +66,15 @@ extrafont::loadfonts(device = "win") # lê a tabela de fontes e registra no R
 
 ```r
 theoffice_dados %>%
-  ggplot() +
-  geom_bar(aes(x = temporada),
-           color = "black",
+  ggplot(aes(x = temporada)) +
+  geom_bar(color = "black",
            fill = RColorBrewer::brewer.pal(9, "Paired")) +
+  geom_text(
+    aes(label = ..count..),
+    stat = "count",
+    vjust = -1,
+    family = "StaffMeetingPlain"
+  ) +
   labs(x = "Temporada",
        y = "Episodios",
        caption = "Figura 1: Episodios por temporada") +
@@ -103,12 +109,12 @@ theoffice_dados %>%
 theoffice_dados %>%
   group_by(temporada) %>%
   summarise(duracao_min_temporada = sum(duracao)) %>%
-  ggplot() +
-  geom_col(
-    aes(x = temporada, y = duracao_min_temporada),
-    color = "black",
-    fill = RColorBrewer::brewer.pal(9, "Paired")
-  ) +
+  ggplot(aes(x = temporada, y = duracao_min_temporada)) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(9, "Paired")) +
+  geom_text(aes(label = round(duracao_min_temporada)),
+            vjust = -1,
+            family = "StaffMeetingPlain") +
   labs(x = "Temporada",
        y = "Duracao (em minutos)",
        caption = "Figura 2: Duracao total (em minutos) de cada temporada") +
@@ -149,21 +155,12 @@ Conforme mostra a *Figura 3*, a audiência média de todas as temporadas do seri
 theoffice_dados %>%
   group_by(temporada) %>%
   summarise(mean_aud_season = mean(qntd_telespectadores_eua_milhoes)) %>%
-  ggplot() +
-  geom_col(
-    aes(x = temporada, y = mean_aud_season),
-    color = "black",
-    fill = RColorBrewer::brewer.pal(9, "Paired")
-  ) +
-  geom_text(
-    aes(
-      x = temporada,
-      y = mean_aud_season,
-      label = round(mean_aud_season, 2)
-    ),
-    vjust = -1,
-    family = "StaffMeetingPlain"
-  ) +
+  ggplot(aes(x = temporada, y = mean_aud_season)) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(9, "Paired")) +
+  geom_text(aes(label = round(mean_aud_season, 2)),
+            vjust = -1,
+            family = "StaffMeetingPlain") +
   labs(x = "Temporada", y = "Media da audiencia (em milhoes) nos EUA",
        caption = "Figura 3: Audiencia media (em milhoes) nos EUA") +
   coord_cartesian(ylim = c(4, 9)) +
@@ -214,15 +211,9 @@ theoffice_dados %>%
   scale_x_continuous(breaks = seq(0, 188, 20)) +
   scale_fill_manual(
     values = c(
-      "#A6CEE3",
-      "#1F78B4",
-      "#B2DF8A",
-      "#33A02C",
-      "#FB9A99",
-      "#E31A1c",
-      "#FDBF6F",
-      "#FF7F00",
-      "#CAB2D6"
+      "#A6CEE3", "#1F78B4", "#B2DF8A",
+      "#33A02C", "#FB9A99", "#E31A1c",
+      "#FDBF6F", "#FF7F00", "#CAB2D6"
     )
   ) +
   theme_minimal() +
@@ -262,13 +253,13 @@ Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 
 theoffice_dados %>%
   group_by(temporada) %>%
   summarise(mean_imdb_season = mean(estrelas_imdb)) %>%
-  ggplot() +
-  geom_col(
-    aes(x = temporada, y = mean_imdb_season),
-    color = "black",
-    fill = RColorBrewer::brewer.pal(9, "Paired")
-  ) +
-  labs(x = "Temporada", 
+  ggplot(aes(x = temporada, y = mean_imdb_season)) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(9, "Paired")) +
+  geom_text(aes(label = round(mean_imdb_season, 2)),
+            vjust = -1,
+            family = "StaffMeetingPlain") +
+  labs(x = "Temporada",
        y = "Estrelas (IMDb)",
        caption = "Figura 5: Media de estrelas (IMDb) recebidas em cada temporada") +
   coord_cartesian(ylim = c(7, 8.8)) +
@@ -308,13 +299,14 @@ A *Figura 6* realça os 10 episódios - no universo de 188 - com melhor avaliaç
 theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
   slice_head(n = 10) %>%
-  select(titulo, estrelas_imdb) %>%
-  ggplot() +
+  ggplot(aes(x = estrelas_imdb, y = reorder(titulo, +estrelas_imdb))) +
   geom_col(
-    aes(x = estrelas_imdb, y = reorder(titulo, +estrelas_imdb)),
     color = "black",
     fill = RColorBrewer::brewer.pal(10, "Paired")
   ) +
+  geom_text(aes(label = round(estrelas_imdb, 2)),
+            hjust = -0.5,
+            family = "StaffMeetingPlain") +
   labs(x = "Estrelas (IMDb)",
        y = "Episodio",
        caption = "Figura 6: Top 10 episodios com melhor avaliacao (IMDb)") +
@@ -419,13 +411,13 @@ theoffice_dados %>%
   rename(roteirista = roteirista_nome, qnt_episodios = n) %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
-  ggplot() +
-  geom_col(
-    aes(x = qnt_episodios,
-        y = reorder(roteirista, +qnt_episodios)),
-    color = "black",
-    fill = RColorBrewer::brewer.pal(10, "Paired")
-  ) +
+  ggplot(aes(x = qnt_episodios,
+             y = reorder(roteirista,+qnt_episodios))) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(10, "Paired")) +
+  geom_text(aes(label = round(qnt_episodios), 2),
+            hjust = -0.5,
+            family = "StaffMeetingPlain") +
   labs(x = "Quantidade de episodios",
        y = "Roteiristas",
        caption = "Figura 8: Top 10 roteiristas que escreveram episodios") +
@@ -477,13 +469,14 @@ theoffice_dados %>%
   rename(qnt_episodios = n) %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
-  ggplot(fill = "cyan") +
-  geom_col(
-    aes(x = qnt_episodios,
-        y = reorder(direcao, +qnt_episodios)),
-    color = "black",
-    fill = RColorBrewer::brewer.pal(10, "Paired")
-  ) +
+  ggplot(aes(x = qnt_episodios,
+             y = reorder(direcao,+qnt_episodios)),
+         fill = "cyan") +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(10, "Paired")) +
+  geom_text(aes(label = qnt_episodios),
+            hjust = -0.5,
+            family = "StaffMeetingPlain") +
   labs(x = "Quantidade de episodios",
        y = "Diretores",
        caption = "Figura 9: Top 10 diretores que dirigiram episodios") +
@@ -523,21 +516,31 @@ Rashinda Jones entrou na terceira temporada, juntamente com Ed Helms, e permanec
 ```r
 theoffice_dados %>%
   separate(col = elenco,
-           into = c("elenco_01", "elenco_02", "elenco_03", "elenco_04", "elenco_05",
-                    "elenco_06", "elenco_07", "elenco_08", "elenco_09", "elenco_10",
-                    "elenco_11", "elenco_12", "elenco_13", "elenco_14", "elenco_15",
-                    "elenco_16", "elenco_17", "elenco_18", "elenco_19", "elenco_20",
-                    "elenco_21", "elenco_22", "elenco_23", "elenco_24", "elenco_25",
-                    "elenco_26", "elenco_27", "elenco_28", "elenco_29", "elenco_30",
-                    "elenco_31", "elenco_32", "elenco_33", "elenco_34", "elenco_35",
-                    "elenco_36", "elenco_37", "elenco_38", "elenco_39", "elenco_40",
-                    "elenco_41", "elenco_42", "elenco_43", "elenco_44", "elenco_45",
-                    "elenco_46", "elenco_47", "elenco_48", "elenco_49", "elenco_50",
-                    "elenco_51", "elenco_52", "elenco_53", "elenco_54", "elenco_55",
-                    "elenco_56", "elenco_57", "elenco_58", "elenco_59", "elenco_60",
-                    "elenco_61", "elenco_62", "elenco_63", "elenco_64", "elenco_65",
-                    "elenco_66", "elenco_67", "elenco_68", "elenco_69", "elenco_70",
-                    "elenco_71", "elenco_72", "elenco_73", "elenco_74", "elenco_75",
+           into = c("elenco_01", "elenco_02", "elenco_03", 
+                    "elenco_04", "elenco_05", "elenco_06", 
+                    "elenco_07", "elenco_08", "elenco_09", 
+                    "elenco_10", "elenco_11", "elenco_12", 
+                    "elenco_13", "elenco_14", "elenco_15",
+                    "elenco_16", "elenco_17", "elenco_18", 
+                    "elenco_19", "elenco_20", "elenco_21", 
+                    "elenco_22", "elenco_23", "elenco_24", 
+                    "elenco_25", "elenco_26", "elenco_27", 
+                    "elenco_28", "elenco_29", "elenco_30",
+                    "elenco_31", "elenco_32", "elenco_33", 
+                    "elenco_34", "elenco_35", "elenco_36", 
+                    "elenco_37", "elenco_38", "elenco_39", 
+                    "elenco_40", "elenco_41", "elenco_42", 
+                    "elenco_43", "elenco_44", "elenco_45",
+                    "elenco_46", "elenco_47", "elenco_48", 
+                    "elenco_49", "elenco_50", "elenco_51", 
+                    "elenco_52", "elenco_53", "elenco_54", 
+                    "elenco_55", "elenco_56", "elenco_57", 
+                    "elenco_58", "elenco_59", "elenco_60",
+                    "elenco_61", "elenco_62", "elenco_63", 
+                    "elenco_64", "elenco_65", "elenco_66", 
+                    "elenco_67", "elenco_68", "elenco_69", 
+                    "elenco_70", "elenco_71", "elenco_72", 
+                    "elenco_73", "elenco_74", "elenco_75",
                     "elenco_76", "elenco_77", "elenco_78"),
            sep = ", ") %>%
   select(episodio, titulo, starts_with("elenco")) %>%
@@ -550,8 +553,8 @@ theoffice_dados %>%
   inner_join(theoffice_personagens, by = "elenco_nome") %>%
   select(elenco_nome, personagem_ns, n) %>%
   DT::datatable(
-    colnames = c("Ator/Atriz", "Personagem(ns)", "Quantidade de episódios"),
-    caption = "Tabela 1: Quantidade de episódios em que cada ator está creditado"
+    colnames = c("Ator/Atriz", "Personagem(ns)", "Número de episódios"),
+    caption = "Tabela 1: Número de episódios em que cada ator está creditado"
   )
 ```
 
