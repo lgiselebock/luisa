@@ -20,7 +20,7 @@ knitr::opts_chunk$set(message = FALSE,	warning = FALSE, fig.align = "center")
 
 ```{r xaringan-panelset, echo = FALSE}
 xaringanExtra::use_clipboard()
-xaringanExtra::use_panelset()
+# xaringanExtra::use_panelset()
 ```
 
 ```{r, echo = FALSE, fig.align = "center"}
@@ -49,7 +49,7 @@ theoffice_dados <- readr::read_rds("data/theoffice_dados.rds")
 theoffice_personagens <- readr::read_rds("data/theoffice_personagens.rds")
 
 # lê a tabela de fontes e registra no R (somente para usuários de Windows)
-extrafont::loadfonts(device = "win") 
+# extrafont::loadfonts(device = "win") 
 ```
 
 ### A Série
@@ -86,7 +86,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r episodio-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -148,7 +148,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r duracao-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -215,7 +215,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r audiencia-media-code, eval = FALSE}
 theoffice_dados %>%
@@ -286,7 +286,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r audiencia-coluna-code, eval = FALSE}
 theoffice_dados %>%
@@ -366,7 +366,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r media_imdb_por_temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -410,10 +410,8 @@ theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = estrelas_imdb, y = reorder(titulo, +estrelas_imdb))) +
-  geom_col(
-    color = "black",
-    fill = RColorBrewer::brewer.pal(10, "Paired")
-  ) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = round(estrelas_imdb, 2)),
             hjust = -0.5,
             family = "StaffMeetingPlain") +
@@ -431,17 +429,16 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r top10_estrelas_imdb-code, eval = FALSE}
 theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
   slice_head(n = 10) %>%
-  ggplot(aes(x = estrelas_imdb, y = reorder(titulo, +estrelas_imdb))) +
-  geom_col(
-    color = "black",
-    fill = RColorBrewer::brewer.pal(10, "Paired")
-  ) +
+  ggplot(aes(x = estrelas_imdb,
+             y = reorder(titulo, +estrelas_imdb))) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = round(estrelas_imdb, 2)),
             hjust = -0.5,
             family = "StaffMeetingPlain") +
@@ -502,7 +499,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r estrelas_imdb_histograma-code, eval = FALSE}
 theoffice_dados %>%
@@ -562,7 +559,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(roteirista,+qnt_episodios))) +
+             y = reorder(roteirista, +qnt_episodios))) +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = qnt_episodios),
@@ -582,7 +579,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r roteiristas-code, eval = FALSE}
 theoffice_dados %>%
@@ -603,7 +600,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(roteirista,+qnt_episodios))) +
+             y = reorder(roteirista, +qnt_episodios))) +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = round(qnt_episodios), 2),
@@ -653,7 +650,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(direcao,+qnt_episodios)),
+             y = reorder(direcao, +qnt_episodios)),
          fill = "cyan") +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
@@ -674,7 +671,7 @@ theoffice_dados %>%
 ```
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r diretores-code, eval = FALSE}
 theoffice_dados %>%
@@ -691,7 +688,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(direcao,+qnt_episodios)),
+             y = reorder(direcao, +qnt_episodios)),
          fill = "cyan") +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
@@ -776,7 +773,7 @@ theoffice_dados %>%
 <br>
 
 <details>
-<summary>Código R</summary>
+<summary>Veja o código em R</summary>
 
 ```{r elenco-code, eval = FALSE}
 tab_cast <- theoffice_dados %>%

@@ -28,7 +28,7 @@ tags:
 <link href="{{< blogdown/postref >}}index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
 <script src="{{< blogdown/postref >}}index_files/crosstalk/js/crosstalk.min.js"></script>
 
-<img src="gay-witch-hunt-featured.jpg" width="540" style="display: block; margin: auto;" />
+<img src="gay-witch-hunt-featured.jpg" style="display: block; margin: auto;" />
 
 <div style="text-align: right">
 
@@ -49,7 +49,7 @@ theoffice_dados <- readr::read_rds("data/theoffice_dados.rds")
 theoffice_personagens <- readr::read_rds("data/theoffice_personagens.rds")
 
 # lê a tabela de fontes e registra no R (somente para usuários de Windows)
-extrafont::loadfonts(device = "win") 
+# extrafont::loadfonts(device = "win") 
 ```
 
 ### A Série
@@ -60,7 +60,7 @@ extrafont::loadfonts(device = "win")
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -100,7 +100,7 @@ theoffice_dados %>%
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -143,7 +143,7 @@ Conforme mostra a *Figura 3*, a audiência média de todas as temporadas do seri
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -182,7 +182,7 @@ A *Figura 4* demonstra a audiência (em milhões de espectadores) para cada epis
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -237,7 +237,7 @@ Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -281,18 +281,17 @@ A *Figura 6* realça os 10 episódios - no universo de 188 - com melhor avaliaç
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
 theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
   slice_head(n = 10) %>%
-  ggplot(aes(x = estrelas_imdb, y = reorder(titulo, +estrelas_imdb))) +
-  geom_col(
-    color = "black",
-    fill = RColorBrewer::brewer.pal(10, "Paired")
-  ) +
+  ggplot(aes(x = estrelas_imdb,
+             y = reorder(titulo, +estrelas_imdb))) +
+  geom_col(color = "black",
+           fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = round(estrelas_imdb, 2)),
             hjust = -0.5,
             family = "StaffMeetingPlain") +
@@ -315,7 +314,7 @@ theoffice_dados %>%
 
 ***Dinner Party*** é o 9º episódio da 4ª temporada, exibido em 10 de abril de 2008. Dirigido por Paul Feig e escrito por Gene Stupnitsky e Lee Eisenberg é [o único roteiro da série que não foi reescrito](https://rollingstone.uol.com.br/noticia/conheca-episodio-perfeito-de-office-o-unico-cujo-roteiro-nao-foi-reescrito/). O episódio mostra a realização de um sonho de Michael Scott: fazer com que o casal Jim e Pam aceitasse um convite para jantar na casa dele. Andy e Angela também são convidados, Dwight (com ciúmes) consegue entrar de penetra com uma companheira (antiga babá e, por vezes, amante dele). O episódio inteiro gira em torno dos personagens anteriormente citados e Jan, companheira de Michael, na casa do casal.
 
-Considerado pela produção e elenco como o “episódio perfeito”, é repleto de momentos extremamente engraçados e (muito) constrangedores. É um dos mais adorados pelos fãs da série, mas, na época em que foi exibido, o público não aceitou bem a ideia. Segundo o diretor Paul Feig:
+Considerado pela produção e elenco como o “episódio perfeito,” é repleto de momentos extremamente engraçados e (muito) constrangedores. É um dos mais adorados pelos fãs da série, mas, na época em que foi exibido, o público não aceitou bem a ideia. Segundo o diretor Paul Feig:
 
 <br>
 
@@ -331,7 +330,7 @@ Em compensação, grande parte da crítica especializada considerou o episódio 
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -377,7 +376,7 @@ Em segundo, **Paul Lieberstein**, interprete do depressivo representante do RH n
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -399,7 +398,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(roteirista,+qnt_episodios))) +
+             y = reorder(roteirista, +qnt_episodios))) +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
   geom_text(aes(label = round(qnt_episodios), 2),
@@ -438,7 +437,7 @@ A lista segue com Greg Daniels, Jeffrey Blitz, Ken Whittingham, David Rogers, Ma
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
@@ -456,7 +455,7 @@ theoffice_dados %>%
   arrange(desc(qnt_episodios)) %>%
   slice_head(n = 10) %>%
   ggplot(aes(x = qnt_episodios,
-             y = reorder(direcao,+qnt_episodios)),
+             y = reorder(direcao, +qnt_episodios)),
          fill = "cyan") +
   geom_col(color = "black",
            fill = RColorBrewer::brewer.pal(10, "Paired")) +
@@ -499,7 +498,7 @@ Rashinda Jones entrou na terceira temporada, juntamente com Ed Helms, e permanec
 
 <details>
 <summary>
-Código R
+Veja o código em R
 </summary>
 
 ``` r
