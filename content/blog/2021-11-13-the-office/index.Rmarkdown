@@ -49,7 +49,7 @@ theoffice_dados <- readr::read_rds("data/theoffice_dados.rds")
 theoffice_personagens <- readr::read_rds("data/theoffice_personagens.rds")
 
 # lê a tabela de fontes e registra no R (somente para usuários de Windows)
-# extrafont::loadfonts(device = "win") 
+extrafont::loadfonts(device = "win") 
 ```
 
 ### A Série
@@ -57,9 +57,6 @@ theoffice_personagens <- readr::read_rds("data/theoffice_personagens.rds")
 **The Office** é uma série americana, originalmente transmitida pela NBC entre 25 de março de 2005 e 16 de maio de 2013, com um total de 188 episódios[^2]. A série, uma adaptação do programa britânico de mesmo nome, é exibida em formato de *pseudodocumentário*, e retrata o cotidiano dos funcionários de um escritório filial da *Dunder Mifflin Paper Company*, uma empresa que vende papel localizada na cidade de Scranton, na Pensilvânia. A série venceu 51 prêmios das 193 indicações que recebeu, entre elas consta, principalmente, 1 *Golden Globes* (2006), 2 *Screen Actors Guild Awards* (2007 e 2008) e 5 *Primetime Emmy Awards* (2006, 2007, 2009 e 2013), incluindo melhor série de comédia.
 
 [^2]: Dependendo da fonte utilizada, há divergências em relação ao número total de episódios. Enquanto o IMDb caracteriza episódios com duração superior a 40 minutos como apenas uma parte, outras fontes dividem estes episódios em duas partes (como ocorreu com *Niágara*).
-
-{{< panelset class="episodio-por-temporada" >}}
-{{< panel name="Gráfico" >}}
 
 ```{r episodio-por-temporada-plot, echo = FALSE}
 theoffice_dados %>%
@@ -88,8 +85,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name="Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r episodio-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -118,13 +115,11 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 É dividida em nove temporadas com uma média de 20 episódios cada uma. A primeira temporada é a mais curta de toda a série, com apenas seis episódios e duração de 137 minutos. Em oposição, as temporadas mais duradouras são a quinta e a sexta, com 26 episódios cada e com 751 e 755 minutos respectivamente.
-
-{{< panelset class="duracao_por_temporada" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r duracao-por-temporada-plot, echo = FALSE}
 theoffice_dados %>%
@@ -152,8 +147,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r duracao-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -181,8 +176,9 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 ### Audiência[^3]
 
@@ -191,9 +187,6 @@ theoffice_dados %>%
 Em 2019, **The Office** superou *Friends* como a série mais assistida da *Netflix* nos Estados Unidos. Segundo dados revelados por Scott Lazerson, executivo da empresa de *streaming*, o seriado protagonizado por Steve Carrel acumulou um total de 52,98 bilhões de minutos assistidos, contra 42,6 bilhões de *Friends*. Apesar do êxito nos dias atuais, **The Office** nunca foi um sucesso de audiência quando exibida nos EUA pela NBC. O programa quase foi cancelado entre a segunda e terceira temporada e só foi salvo por suas boas vendas no iTunes.
 
 Conforme mostra a *Figura 3*, a audiência média de todas as temporadas do seriado não ultrapassa os 9 milhões de telespectadores, sendo a quinta e a nona (e última) temporada as com melhor e pior média - 8.76 e 4,14 milhões de telespctadores, respectivamente. É possível observar, após a saída de Steve Carrel do elenco, ao final da 7ª temporada, uma queda bastante considerável na audiência média das últimas duas temporadas.
-
-{{< panelset class="audiencia_media" >}}
-{{< panel name="Gráfico" >}}
 
 ```{r audiencia-media-plot, echo = FALSE}
 theoffice_dados %>%
@@ -221,8 +214,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel>}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r audiencia-media-code, eval = FALSE}
 theoffice_dados %>%
@@ -250,13 +243,11 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 A *Figura 4* demonstra a audiência (em milhões de espectadores) para cada episódio da série. Todos os episódios, exceto um, apresentam uma média constante e abaixo dos 10 milhões de espectadores. A exceção é ***Stress Relief***, décimo terceiro episódio da quinta temporada, exibido no dia 1 de fevereiro de 2009 - imediatamente após a transmissão do *SuperBowl XLIII* pela NBC.
-
-{{< panelset class="audiencia_coluna" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r audiencia-coluna-plot, echo = FALSE}
 theoffice_dados %>%
@@ -294,8 +285,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r audiencia-coluna-code, eval = FALSE}
 theoffice_dados %>%
@@ -333,8 +324,9 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 ***Stress Relief***, escrito por Paul Lieberstein e dirigido por Jeffrey Blitz, foi o episódio mais assistido da série, com 22.91 milhões de espectadores. Por se tratrar de um episódio especial, possui uma hora de duração (com os comerciais inclusos) e contou com participações especiais de Jack Black, Jessica Alba e Cloris Leachman que aparecem em um filme exibido dentro do episódio.
 
@@ -345,9 +337,6 @@ Nele, Dwight encena um incêndio no escritório para testar as habilidades de se
 ### Melhores episódios
 
 Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 43ª posição com 8.9 estrelas. Nas avaliações dos usuários do IMDb, a sequência da 3ª, a 4ª e a 5ª temporadas como as três melhores da série, obtendo, respectivamente, 8.59, 8.56 e 8.49 estrelas; por outro lado, a 8ª temporada recebeu a menor avaliação, com 7.58 estrelas. A *Figura 5* apresenta a avaliação média para todas as temporadas.
-
-{{< panelset class="media_imdb_por_temporada" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r media_imdb_por_temporada-plot, echo = FALSE}
 theoffice_dados %>%
@@ -376,8 +365,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r media_imdb_por_temporada-code, eval = FALSE}
 theoffice_dados %>%
@@ -406,18 +395,15 @@ theoffice_dados %>%
   )
 ```
 
+</details>
 
-{{< /panel >}}
-{{< /panelset >}}
+<br>
 
 A *Figura 6* realça os 10 episódios - no universo de 188 - com melhor avaliação segundo o IMDb, todos com mais de 9.3 estrelas. Destaque para ***Goodbye, Michael*** e ***Finale***, ambas com 9.8 estrelas; ***Stress Relief*** com 9.7 estrelas; ***Dinner Party*** e ***A.A.R.M*** com 9.5. Menção especial para ***Niagara: Part 1*** e ***Niagara: Part 2***, episódios que retraram o (tão esperado) casamento entre Jim e Pam, e obtiveram 9.4 estrelas cada um.
 
 ***Goodbye, Michael*** é o 21º episódio da 7ª temporada, foi exibido no dia 28 de abril de 2011 e é, como o nome já diz, o episódio de despedida de Michael Scott. Escrito por Greg Daniels e dirigido por Paul Feig, marca a última aparição de Steve Carrel (Michael Scott) como parte do elenco regular. Durante 50 minutos, Michael se prepara para partir rumo ao Colorado com sua namorada Holly e passa o último dia no escritório se despedindo individualmente de cada um dos seus colegas; enquanto isso, o novo gerente Deangelo e Andy tentam ficar com os maiores clientes de Michael.
 
 ***Finale*** é o 23º episódio da 9ª temporada, foi exibido no dia 16 de maio de 2013 e é o último episódio da série. Foi escrito por Greg Daniels e dirigido por Ken Kwapis (que dirigiu o episódio ***Pilot***). O enredo consiste em um reencontro com os antigos e atuais trabalhadores da *Dunder Mifflin Paper Company* para o casamento de Angela e Dwight e, também, uma rodada final de entrevistas - um ano após a exibição do documentário.
-
-{{< panelset class ="top10_estrelas_imdb" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r top10-estrelas-imdb-plot, echo = FALSE}
 theoffice_dados %>%
@@ -444,8 +430,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r top10_estrelas_imdb-code, eval = FALSE}
 theoffice_dados %>%
@@ -472,8 +458,9 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 ***Dinner Party*** é o 9º episódio da 4ª temporada, exibido em 10 de abril de 2008. Dirigido por Paul Feig e escrito por Gene Stupnitsky e Lee Eisenberg é [o único roteiro da série que não foi reescrito](https://rollingstone.uol.com.br/noticia/conheca-episodio-perfeito-de-office-o-unico-cujo-roteiro-nao-foi-reescrito/). O episódio mostra a realização de um sonho de Michael Scott: fazer com que o casal Jim e Pam aceitasse um convite para jantar na casa dele. Andy e Angela também são convidados, Dwight (com ciúmes) consegue entrar de penetra com uma companheira (antiga babá e, por vezes, amante dele). O episódio inteiro gira em torno dos personagens anteriormente citados e Jan, companheira de Michael, na casa do casal.
 
@@ -488,9 +475,6 @@ Considerado pela produção e elenco como o "episódio perfeito", é repleto de 
 Em compensação, grande parte da crítica especializada considerou o episódio como um dos melhores de **The Office**. Travis Fickett da IGN escreveu que ["este é um daqueles grandes episódios de **The Office** que é histérico e difícil de assitir ao mesmo tempo"](https://www.ign.com/articles/2008/04/11/the-office-dinner-party-review).
 
 É interessante observar que os dois episódios com melhor avaliação (***Goodbye, Michael*** e ***Finale***) carregam uma carga emotiva superior à comédia, uma vez que ambos tratam de duas despedidas: o primeiro, de Michael; o segundo, da série em si.
-
-{{< panelset class="estrelas_imdb_histograma" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r estrelas_imdb_histograma-plot, echo = FALSE}
 theoffice_dados %>%
@@ -517,8 +501,8 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r estrelas_imdb_histograma-code, eval = FALSE}
 theoffice_dados %>%
@@ -545,8 +529,9 @@ theoffice_dados %>%
   )
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 Nas avaliações de todos os 188 episódios, há um intervalo de avaliação entre 6.5 e 9.8 estrelas, sendo uma predominância na quantidade de estrelas entre 7.75 e 8.75. O histograma acima (*Figura 7*) revela a frequência das estrelas dadas pelos usuários do IMDb para todos os episódios.
 
@@ -557,9 +542,6 @@ Durante os nove anos em que esteve no ar, 40 roteiristas diferentes assinaram ao
 **Mindy Kaling** encabeça a lista. Ela, que além de interpretar a personagem Kelly Kapoor, roteirizou 22 episódios, entre eles: *Niagara: Part 1*, *Niagara: Part 2*; escritos juntamente com Greg Daniels.
 
 Em segundo, **Paul Lieberstein**, interprete do depressivo representante do RH no escritório e odiado por Michael Scott - Toby Flenderson -, participou de 16 roteiros; entre eles, *Stress Relief*, o episódio mais visto de toda a série e o terceiro melhor avaliado segundo IMDb.
-
-{{< panelset class="roteiristas" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r roteiristas-plot, echo = FALSE}
 theoffice_dados %>%
@@ -599,8 +581,8 @@ theoffice_dados %>%
   )  
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r roteiristas-code, eval = FALSE}
 theoffice_dados %>%
@@ -640,8 +622,9 @@ theoffice_dados %>%
   ) 
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 **B. J. Novak**, o estagiário Ryan Howard, roteirizou 15 episódios; além de roteirista, Novak foi a primeira pessoa a entrar para o elenco. Ele é responsável por assinar o episódio *Threat Level Midnight*, o sexto melhor segundo o ranking do IMDb.
 
@@ -654,9 +637,6 @@ theoffice_dados %>%
 Ao todo, 55 diretores participaram da série nesssas nove temporadas. **Randall Einhorn** e **Paul Feig** encabeçam a lista com 15 episódios cada. Paul Feig é o responsável pela direção de 4 dos 10 episódios com melhor avalição, são eles: *Goodbye, Michael*, *Dinner Party*, *Niagara: Part 1* e *Niagara: Part 2*. Ken Kwapis dirigiu 13 episódios, entre eles: *Pilot*, *Diversity Day* e *Finale* - primeiro, segundo e último episódios, respectivamente.
 
 A lista segue com Greg Daniels, Jeffrey Blitz, Ken Whittingham, David Rogers, Matt Sohn, Charles McDougall e Paul Lieberstein fecha o Top 10.
-
-{{< panelset class="diretores" >}}
-{{< panel name = "Gráfico" >}}
 
 ```{r diretores-plot, echo = FALSE}
 theoffice_dados %>%
@@ -693,8 +673,8 @@ theoffice_dados %>%
   )  
 ```
 
-{{< /panel >}}
-{{< panel name = "Código R" >}}
+<details>
+<summary>Código R</summary>
 
 ```{r diretores-code, eval = FALSE}
 theoffice_dados %>%
@@ -731,8 +711,9 @@ theoffice_dados %>%
   )  
 ```
 
-{{< /panel >}}
-{{< /panelset >}}
+</details>
+
+<br>
 
 Outros integrantes do elenco regular também dirigiram ao menos um episódio, como: Mindy Kaling, Ed Helms, Brian Baumgartner, Steve Carell, John Krasinski, Rainn Wilson e B.J. Novak. Além destes, profissionais consagrados em outros trabalhos, contribuíram para a direção de episódios em **The Office**, por exemplo: Bryan Cranston, J.J. Abrams e Marc Webb entre outros.
 
@@ -746,7 +727,51 @@ Rashinda Jones entrou na terceira temporada, juntamente com Ed Helms, e permanec
 
 <br>
 
-`TABELA`
+```{r, echo = FALSE}
+theoffice_dados %>%
+  separate(col = elenco,
+           into = c("elenco_01", "elenco_02", "elenco_03", 
+                    "elenco_04", "elenco_05", "elenco_06", 
+                    "elenco_07", "elenco_08", "elenco_09", 
+                    "elenco_10", "elenco_11", "elenco_12", 
+                    "elenco_13", "elenco_14", "elenco_15",
+                    "elenco_16", "elenco_17", "elenco_18", 
+                    "elenco_19", "elenco_20", "elenco_21", 
+                    "elenco_22", "elenco_23", "elenco_24", 
+                    "elenco_25", "elenco_26", "elenco_27", 
+                    "elenco_28", "elenco_29", "elenco_30",
+                    "elenco_31", "elenco_32", "elenco_33", 
+                    "elenco_34", "elenco_35", "elenco_36", 
+                    "elenco_37", "elenco_38", "elenco_39", 
+                    "elenco_40", "elenco_41", "elenco_42", 
+                    "elenco_43", "elenco_44", "elenco_45",
+                    "elenco_46", "elenco_47", "elenco_48", 
+                    "elenco_49", "elenco_50", "elenco_51", 
+                    "elenco_52", "elenco_53", "elenco_54", 
+                    "elenco_55", "elenco_56", "elenco_57", 
+                    "elenco_58", "elenco_59", "elenco_60",
+                    "elenco_61", "elenco_62", "elenco_63", 
+                    "elenco_64", "elenco_65", "elenco_66", 
+                    "elenco_67", "elenco_68", "elenco_69", 
+                    "elenco_70", "elenco_71", "elenco_72", 
+                    "elenco_73", "elenco_74", "elenco_75",
+                    "elenco_76", "elenco_77", "elenco_78"),
+           sep = ", ") %>%
+  select(episodio, titulo, starts_with("elenco")) %>%
+  pivot_longer(cols = starts_with("elenco"),
+               names_to = "elenco_num",
+               values_to = "elenco_nome") %>%
+  count(elenco_nome) %>%
+  arrange(desc(n)) %>%
+  drop_na() %>%
+  inner_join(theoffice_personagens, by = "elenco_nome") %>%
+  select(elenco_nome, personagem_ns, n) %>%
+  DT::datatable(
+    colnames = c("Ator/Atriz", "Personagem(ns)", "Número de episódios"),
+    caption = "Tabela 1: Número de episódios em que cada ator está creditado"
+  )
+```
+
 
 <br>
 
@@ -754,7 +779,7 @@ Rashinda Jones entrou na terceira temporada, juntamente com Ed Helms, e permanec
 <summary>Código R</summary>
 
 ```{r elenco-code, eval = FALSE}
-theoffice_dados %>%
+tab_cast <- theoffice_dados %>%
   separate(col = elenco,
            into = c("elenco_01", "elenco_02", "elenco_03", 
                     "elenco_04", "elenco_05", "elenco_06", 
@@ -810,8 +835,3 @@ A maior parte dos atores creditados fizeram apenas uma participação em algum (
 
 
 
-
-[^1]: Dados coletados até o dia 07 de novembro de 2021, às 17:43.
-[^2]: Dependendo da fonte utilizada, há divergências em relação ao número total de episódios. Enquanto o IMDb caracteriza episódios com duração superior a 40 minutos como apenas uma parte, outras fontes dividem estes episódios em duas partes (como ocorreu com *Niágara*).
-[^3]: Número de telespectadores (nos Estados Unidos) que assistiram o episódio na noite em que ele foi transmitido.
-[^4]: “*Stanley, você esmaga sua mulher no sexo e seu coração não presta.*”
