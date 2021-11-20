@@ -38,6 +38,10 @@ knitr::include_graphics("https://img.nbc.com/sites/nbcunbc/files/scet/photos/22/
 
 <div style="text-align: justify">
 
+> Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto entregue pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html).
+
+<br>
+
 Em agosto de 2020, um trecho do documentário *O Fórum* viralizou na internet mostrando, nos bastidores do Fórum Econômico Mundial, ocorrido em 2019, na cidade de Davos (Suíça), um diálogo sobre a Amazônia entre Jair Bolsonaro e o ex-vice-presidente dos Estado Unidos Al Gore, reconhecido ativista ambiental. Impossível não relacionar a situação constrangedor, vivida pelo atual presidente brasileiro, com uma cena protagonizada por Michael Scott, personagem interpretado por Steve Carrel, no seriado **The Office**. Série que redefiniu a situação de vergonha alheia.
 
 O presente trabalho visa realizar uma análise sobre o seriado americano **The Office**, como audiência, melhores episódios, roteiros, direção e elenco. As informações observadas foram integralmente coletadas da base de dados [IMDb (*Internet Movie Database*)](https://www.imdb.com)[^1] - base de dados *online* sobre entretenimento, a avaliação é composta por notas dadas por espectadores e críticos.
@@ -66,7 +70,7 @@ theoffice_personagens <-
   janitor::clean_names() %>%
   rename(elenco_nome = elenco)
 
-# lê a tabela de fontes e registra no R (somente para usuários de Windows)
+# lê a tabela de fontes e registra no R (somente para usuários do Windows)
 # extrafont::loadfonts(device = "win") 
 ```
 
@@ -76,6 +80,9 @@ theoffice_personagens <-
 
 [^4]: Dependendo da fonte utilizada, há divergências em relação ao número total de episódios. Enquanto o IMDb caracteriza episódios com duração superior a 40 minutos como apenas uma parte, outras fontes dividem estes episódios em duas partes (como ocorreu com *Niágara*).
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r episodio-por-temporada-plot, echo = FALSE}
 theoffice_dados %>%
   ggplot(aes(x = temporada)) +
@@ -102,10 +109,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r episodio-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
   ggplot(aes(x = temporada)) +
@@ -132,13 +138,14 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 É dividida em nove temporadas com uma média de 20 episódios cada uma. A primeira temporada é a mais curta de toda a série, com apenas seis episódios e duração de 137 minutos. Em oposição, as temporadas mais duradouras são a quinta e a sexta, com 26 episódios cada e com 751 e 755 minutos respectivamente.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r duracao-por-temporada-plot, echo = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -164,10 +171,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r duracao-por-temporada-code, eval = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -193,10 +199,8 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 ### Audiência[^5]
 
@@ -208,6 +212,9 @@ Em 2019, **The Office** superou *Friends* como a série mais assistida da *Netfl
 
 Conforme mostra a *Figura 3*, a audiência média de todas as temporadas do seriado não ultrapassa os 9 milhões de telespectadores, sendo a quinta e a nona (e última) temporada as com melhor e pior média - 8.76 e 4,14 milhões de telespctadores, respectivamente. É possível observar, após a saída de Steve Carrel do elenco, ao final da 7ª temporada, uma queda bastante considerável na audiência média das últimas duas temporadas.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r audiencia-media-plot, echo = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -233,10 +240,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r audiencia-media-code, eval = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -262,13 +268,14 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 A *Figura 4* demonstra a audiência (em milhões de espectadores) para cada episódio da série. Todos os episódios, exceto um, apresentam uma média constante e abaixo dos 10 milhões de espectadores. A exceção é ***Stress Relief***, décimo terceiro episódio da quinta temporada, exibido no dia 1 de fevereiro de 2009 - imediatamente após a transmissão do *SuperBowl XLIII* pela NBC.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r audiencia-coluna-plot, echo = FALSE}
 theoffice_dados %>%
   mutate(temporada = as.factor(temporada)) %>%
@@ -304,10 +311,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r audiencia-coluna-code, eval = FALSE}
 theoffice_dados %>%
   mutate(temporada = as.factor(temporada)) %>%
@@ -343,10 +349,8 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 ***Stress Relief***, escrito por Paul Lieberstein e dirigido por Jeffrey Blitz, foi o episódio mais assistido da série, com 22.91 milhões de espectadores. Por se tratrar de um episódio especial, possui uma hora de duração (com os comerciais inclusos) e contou com participações especiais de Jack Black, Jessica Alba e Cloris Leachman que aparecem em um filme exibido dentro do episódio.
 
@@ -358,6 +362,9 @@ Nele, Dwight encena um incêndio no escritório para testar as habilidades de se
 
 Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 43ª posição com 8.9 estrelas. Nas avaliações dos usuários do IMDb, a sequência da 3ª, a 4ª e a 5ª temporadas como as três melhores da série, obtendo, respectivamente, 8.59, 8.56 e 8.49 estrelas; por outro lado, a 8ª temporada recebeu a menor avaliação, com 7.58 estrelas. A *Figura 5* apresenta a avaliação média para todas as temporadas.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r media_imdb_por_temporada-plot, echo = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -384,10 +391,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r media_imdb_por_temporada-code, eval = FALSE}
 theoffice_dados %>%
   group_by(temporada) %>%
@@ -414,10 +420,8 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 A *Figura 6* realça os 10 episódios - no universo de 188 - com melhor avaliação segundo o IMDb, todos com mais de 9.3 estrelas. Destaque para ***Goodbye, Michael*** e ***Finale***, ambas com 9.8 estrelas; ***Stress Relief*** com 9.7 estrelas; ***Dinner Party*** e ***A.A.R.M*** com 9.5. Menção especial para ***Niagara: Part 1*** e ***Niagara: Part 2***, episódios que retraram o (tão esperado) casamento entre Jim e Pam, e obtiveram 9.4 estrelas cada um.
 
@@ -425,6 +429,9 @@ A *Figura 6* realça os 10 episódios - no universo de 188 - com melhor avaliaç
 
 ***Finale*** é o 23º episódio da 9ª temporada, foi exibido no dia 16 de maio de 2013 e é o último episódio da série. Foi escrito por Greg Daniels e dirigido por Ken Kwapis (que dirigiu o episódio ***Pilot***). O enredo consiste em um reencontro com os antigos e atuais trabalhadores da *Dunder Mifflin Paper Company* para o casamento de Angela e Dwight e, também, uma rodada final de entrevistas - um ano após a exibição do documentário.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r top10-estrelas-imdb-plot, echo = FALSE}
 theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
@@ -447,10 +454,9 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r top10_estrelas_imdb-code, eval = FALSE}
 theoffice_dados %>%
   arrange(desc(estrelas_imdb)) %>%
@@ -474,10 +480,8 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 ***Dinner Party*** é o 9º episódio da 4ª temporada, exibido em 10 de abril de 2008. Dirigido por Paul Feig e escrito por Gene Stupnitsky e Lee Eisenberg é [o único roteiro da série que não foi reescrito](https://rollingstone.uol.com.br/noticia/conheca-episodio-perfeito-de-office-o-unico-cujo-roteiro-nao-foi-reescrito/). O episódio mostra a realização de um sonho de Michael Scott: fazer com que o casal Jim e Pam aceitasse um convite para jantar na casa dele. Andy e Angela também são convidados, Dwight (com ciúmes) consegue entrar de penetra com uma companheira (antiga babá e, por vezes, amante dele). O episódio inteiro gira em torno dos personagens anteriormente citados e Jan, companheira de Michael, na casa do casal.
 
@@ -493,6 +497,9 @@ Em compensação, grande parte da crítica especializada considerou o episódio 
 
 É interessante observar que os dois episódios com melhor avaliação (***Goodbye, Michael*** e ***Finale***) carregam uma carga emotiva superior à comédia, uma vez que ambos tratam de duas despedidas: o primeiro, de Michael; o segundo, da série em si.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r estrelas_imdb_histograma-plot, echo = FALSE}
 theoffice_dados %>%
   ggplot() +
@@ -517,10 +524,9 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r estrelas_imdb_histograma-code, eval = FALSE}
 theoffice_dados %>%
   ggplot() +
@@ -545,10 +551,8 @@ theoffice_dados %>%
     legend.box.just = "right"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 Nas avaliações de todos os 188 episódios, há um intervalo de avaliação entre 6.5 e 9.8 estrelas, sendo uma predominância na quantidade de estrelas entre 7.75 e 8.75. O histograma acima (*Figura 7*) revela a frequência das estrelas dadas pelos usuários do IMDb para todos os episódios.
 
@@ -560,6 +564,9 @@ Durante os nove anos em que esteve no ar, 40 roteiristas diferentes assinaram ao
 
 Em segundo, **Paul Lieberstein**, interprete do depressivo representante do RH no escritório e odiado por Michael Scott - Toby Flenderson -, participou de 16 roteiros; entre eles, *Stress Relief*, o episódio mais visto de toda a série e o terceiro melhor avaliado segundo IMDb.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r roteiristas-plot, echo = FALSE}
 theoffice_dados %>%
   separate(
@@ -597,10 +604,9 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   )  
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r roteiristas-code, eval = FALSE}
 theoffice_dados %>%
   separate(
@@ -638,10 +644,8 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   ) 
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 **B. J. Novak**, o estagiário Ryan Howard, roteirizou 15 episódios; além de roteirista, Novak foi a primeira pessoa a entrar para o elenco. Ele é responsável por assinar o episódio *Threat Level Midnight*, o sexto melhor segundo o ranking do IMDb.
 
@@ -655,6 +659,9 @@ Ao todo, 55 diretores participaram da série nesssas nove temporadas. **Randall 
 
 A lista segue com Greg Daniels, Jeffrey Blitz, Ken Whittingham, David Rogers, Matt Sohn, Charles McDougall e Paul Lieberstein fecha o Top 10.
 
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Gráfico</div>
 ```{r diretores-plot, echo = FALSE}
 theoffice_dados %>%
   separate(col = direcao,
@@ -689,10 +696,9 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   )  
 ```
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r diretores-code, eval = FALSE}
 theoffice_dados %>%
   separate(col = direcao,
@@ -727,10 +733,8 @@ theoffice_dados %>%
     text = element_text(family = "StaffMeetingPlain")
   )  
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 Outros integrantes do elenco regular também dirigiram ao menos um episódio, como: Mindy Kaling, Ed Helms, Brian Baumgartner, Steve Carell, John Krasinski, Rainn Wilson e B.J. Novak. Além destes, profissionais consagrados em outros trabalhos, contribuíram para a direção de episódios em **The Office**, por exemplo: Bryan Cranston, J.J. Abrams e Marc Webb entre outros.
 
@@ -742,9 +746,10 @@ O elenco regular (funcionários do escritório) se concentram nas primeiras posi
 
 Rashinda Jones entrou na terceira temporada, juntamente com Ed Helms, e permaneceu somente por 26 episódios. Saindo para compor o elenco de *Parks and Recreation*, série criada pelos mesmos produtores de **The Office**.
 
-<br>
-
-```{r, echo = FALSE}
+<div class="panelset">
+<div class="panel">
+<div class="panel-name">Tabela</div>
+```{r elenco-tab, echo = FALSE}
 theoffice_dados %>%
   separate(col = elenco,
            into = c("elenco_01", "elenco_02", "elenco_03",
@@ -788,12 +793,9 @@ theoffice_dados %>%
     caption = "Tabela 1: Número de episódios em que cada ator está creditado"
   )
 ```
-
-<br>
-
-<details>
-<summary>Veja o código em R</summary>
-
+</div>
+<div class="panel">
+<div class="panel-name">Código R</div>
 ```{r elenco-code, eval = FALSE}
 theoffice_dados %>%
   separate(col = elenco,
@@ -838,10 +840,8 @@ theoffice_dados %>%
     caption = "Tabela 1: Número de episódios em que cada ator está creditado"
   )
 ```
-
-</details>
-
-<br>
+</div>
+</div>
 
 Segundo a tabela, Ed Helms possui mais aparições que Steve Carrel (ator principal que saiu ao final da sétima temporada). Após a saída de Steve, outros atores entraram para participações especiais, como: Zach Woods, Catherine Tate, Robert R. Shafer, James Spader, Kathy Bates, Will Ferrell, entre outros.
 
@@ -853,11 +853,9 @@ Nascida em 2005 e encerrada em 2013, **The Office** conquista novos fãs até os
 
 ### Agradecimentos
 
-* Aos professores [Beatriz Milz](https://twitter.com/BeaMilz) e [William Amorim](https://twitter.com/wamorim_), pelos conhecimentos compartilhados e pelo incentivo na realização deste blog.
+* À [Curso-R](https://curso-r.com/), especialmente aos professores [Beatriz Milz](https://twitter.com/BeaMilz) e [William Amorim](https://twitter.com/wamorim_), pelos conhecimentos compartilhados e pelo incentivo na realização deste blog.
 
-<!-- * À [**Curso-R**](https://curso-r.com/) por ofecer seus cursos em formato *on-line*, expandindo, assim, os conhecimentos de <span style="color:darkblue">**R**</span> para vários lugares do Brasil. -->
-
-* À minha namorada Samantha de Moraes, por *sempre* acreditar em mim (mesmo quando nem eu mesma acredito). Te amo! :heart:
+* À minha namorada, Samantha de Moraes, por *sempre* acreditar em mim (mesmo quando nem eu mesma acredito). Te amo! :heart:
 
 ### Referências
 
@@ -881,6 +879,6 @@ knitr::write_bib(
 )
 ```
 
-<!-- [ˆ1]: Este trabalho foi realizado, originalmente, para a obtenção do certificado do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto entregue pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html). Abaixo, está o texto com algumas alterações sugeridas pelos professores, além dos códigos utilizados. -->
+<!-- [ˆ1]: Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto entregue pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html). -->
 
 </div>
