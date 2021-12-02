@@ -16,18 +16,13 @@ show_post_date: true
 show_post_thumbnail: true
 sidebar:
   author: Luísa Gisele Böck
-  description: "... é como escrever uma carta de amor e endereçá-la '*a quem interessar possa*'. \" 
-  
-  **Ken Haemer** 
-  
-  
-  Uma pequena coleção das minhas escritas. \n"
+  description: Uma pequena coleção das minhas escritas. \n"
   
   
   show_sidebar_adunit: true
   text_link_label: 
   text_link_url: /index.xml
-  title: \"Elaborar uma apresentação sem levar o público em consideração...
+  title: 
 thumbnail_left: true
 title: Blog
 ---

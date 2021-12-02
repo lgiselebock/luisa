@@ -41,7 +41,7 @@ bibliography: packages.bib
 
 <div style="text-align: justify">
 
-> Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto entregue pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html).
+> Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto deste blog é muito semelhante ao original, apenas com algumas correções propostas pelos professores, e com o acréscimo dos códigos em <span style="color:darkblue">R</span> utilizados. O texto original pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html).
 
 <br>
 
@@ -49,7 +49,7 @@ Em agosto de 2020, um trecho do documentário *O Fórum* viralizou na internet m
 
 O presente trabalho visa realizar uma análise sobre o seriado americano **The Office**, como audiência, melhores episódios, roteiros, direção e elenco. As informações observadas foram integralmente coletadas da base de dados [IMDb (*Internet Movie Database*)](https://www.imdb.com)[^1] - base de dados *online* sobre entretenimento, a avaliação é composta por notas dadas por espectadores e críticos.
 
-Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos. Os códigos das saídas apresentadas neste texto (gráficos e tabela) podem ser vistos - e copiados - em \`Veja o código em R’.
+Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos.
 
 ``` r
 library(tidyverse)

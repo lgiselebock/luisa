@@ -38,7 +38,7 @@ knitr::include_graphics("https://img.nbc.com/sites/nbcunbc/files/scet/photos/22/
 
 <div style="text-align: justify">
 
-> Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto entregue pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html).
+> Este trabalho foi realizado, originalmente, para a obtenção do certificado de conclusão do curso [**R para Ciência de Dados I**](https://curso-r.com/cursos/r4ds-1/) da [Curso-R](https://curso-r.com/). O texto deste blog é muito semelhante ao original, apenas com algumas correções propostas pelos professores, e com o acréscimo dos códigos em <span style="color:darkblue">R</span> utilizados. O texto original pode ser conferido [neste *link*](https://curso-r.github.io/202010-r4ds-1/trabalho_final/Luisa_Bock.html).
 
 <br>
 
@@ -48,7 +48,7 @@ O presente trabalho visa realizar uma análise sobre o seriado americano **The O
 
 [^1]: Dados coletados até o dia 07 de novembro de 2021, às 17:43, [neste link](https://www.imdb.com/title/tt0386676/). 
 
-Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos. Os códigos das saídas apresentadas neste texto (gráficos e tabela) podem ser vistos - e copiados - em \`Veja o código em R'.
+Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos.
 
 [^2]: O arquivo .xls está disponível [neste link](https://github.com/lgiselebock/luisa/tree/blog/content/blog/2021-11-13-the-office/data). Nesta pasta, há, também, dois arquivos .rds já tratados e que podem ser lidos com o pacote `{readr}` [@R-readr].
 
