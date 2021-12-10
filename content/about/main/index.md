@@ -6,11 +6,7 @@ use_featured: false # if false, use most recent by date
 number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
-  Cachoeirense de nascimento e santa-mariense de coração, atualmente sou estudante de Ciências Econômicas na Universidade Federal de Santa Maria ([UFSM](https://www.ufsm.br/)). 
-  
-  Eu me apaixonei por R e ciência de dados durante a graduação, utilizando R e RStudio para coletar, modelar, analisar, visualizar e comunicar meus dados. 
-  
-  Tenho interesse particular em visualização e narrativa de dados, e acredito na importância da comunicação de conhecimentos e informações baseados em dados para todos os públicos.
+  Cachoeirense de nascimento e santa-mariense de coração, atualmente sou estudante de Ciências Econômicas na Universidade Federal de Santa Maria ([UFSM](https://www.ufsm.br/)).
   
 show_outro: false
 outro: |
