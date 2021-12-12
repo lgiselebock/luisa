@@ -25,6 +25,7 @@ enableEmoji = true
     ordered = false
   [markup.highlight]
     # one of: https://xyproto.github.io/splash/docs/
+    # github, dracula, manni, pastie, pygments, tango, xcode
     style = "github"
 
 [params]
@@ -33,7 +34,7 @@ enableEmoji = true
   description = "Página pessoal de Luisa Gisele Böck"
   favicon = "/img/favicon.ico"
   logo = "/img/logo.png"
-  mainSections = ["blog"]
+  mainSections = ["blog", "project"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -72,7 +73,7 @@ enableEmoji = true
   [params.utterances]
     use_utterances = true
     repo_name = "lgiselebock/luisa"
-    issue_term = "pathname" # url, pathname, or title
+    issue_term = "title" # url, pathname, or title
     theme = "boxy-light"
     label = "comments :crystal_ball:"
 
@@ -124,6 +125,16 @@ enableEmoji = true
     title = "Blog"
     url = "/blog/"
     weight = 3
+  [[menu.header]]
+    name = "Projetos"
+    title = "Projetos"
+    url = "/project/"
+    weight = 4
+# [[menu.header]]
+#   name = "A collection"
+#   title = "A collection"
+#   url = "/collection/"
+#   weight = 5
 
   # Configure footer
   [[menu.footer]]

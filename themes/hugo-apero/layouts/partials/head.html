@@ -10,6 +10,8 @@
   {{ end }}
   {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  <!-- Custom stylesheet - for your changes -->
+  <link href="{{ "css/custom.css" | relURL}}" rel="stylesheet">
   <!-- panelset.js -->
   {{ $panelsetJs := resources.Get "js/panelset.js" | js.Build "panelset.js" | minify | fingerprint }}
   <script src="{{ $panelsetJs.RelPermalink }}" type="text/javascript"></script>
