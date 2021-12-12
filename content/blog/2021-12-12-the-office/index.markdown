@@ -426,7 +426,7 @@ Considerado pela produção e elenco como o “episódio perfeito,” é repleto
 
 <br>
 
-> “Nós fizemos as pessoas sentirem-se tão constrangidas que elas simplesmente não aguentavam. Porém, com o passar dos anos, os fãs da série passaram a amar \`Dinner Party’. O que aconteceu agora é que, depois de ver uma vez e saber o que está por vir, você pode realmente aproveitá-lo.”
+> “Nós fizemos as pessoas sentirem-se tão constrangidas que elas simplesmente não aguentavam. Porém, com o passar dos anos, os fãs da série passaram a amar *‘Dinner Party’*. O que aconteceu agora é que, depois de ver uma vez e saber o que está por vir, você pode realmente aproveitá-lo.”
 
 <br>
 
