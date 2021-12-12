@@ -2,7 +2,7 @@
 title: "That's what the numbers said!"
 subtitle: "O quê os números dizem sobre uma das séries de comédia mais famosas do século XXI?"
 excerpt: "O quê os números dizem sobre uma das séries de comédia mais famosas do século XXI? Foi esta pergunta que eu tentei responder em meu trabalho de conclusão do curso [**R para Ciência de Dados I**](https://loja.curso-r.com/r-para-ciencia-de-dados-i.html) da [Curso-R](https://curso-r.com/)."
-date: 2021-12-11
+date: 2021-12-12
 author: "Luísa Gisele Böck"
 draft: false
 # layout options: single, single-sidebar
@@ -49,7 +49,7 @@ Em agosto de 2020, um trecho do documentário *O Fórum* viralizou na internet m
 
 O presente trabalho visa realizar uma análise sobre o seriado americano **The Office**, como audiência, melhores episódios, roteiros, direção e elenco. As informações observadas foram integralmente coletadas da base de dados [IMDb (*Internet Movie Database*)](https://www.imdb.com)[^1] - base de dados *online* sobre entretenimento, a avaliação é composta por notas dadas por espectadores e críticos.
 
-Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos. Os códigos das saídas apresentadas neste texto (gráficos e tabela) podem ser vistos - e copiados - nas abas `Código R`.
+Para iniciar a análise, é necessário carregar os pacotes, as bases de dados[^2] e a fonte das letras[^3] utilizadas nos gráficos. Os códigos das saídas apresentadas neste texto (gráficos e tabela) podem ser vistos - e copiados - nas abas `'Código R'`.
 
 ``` r
 library(tidyverse)
@@ -59,7 +59,7 @@ theoffice_dados <-
   readxl::read_excel("data/the_office_series.xls") %>%
   janitor::clean_names()
 
-# carrega a base com os nomes dos personagens e respectivos atores
+# carrega a base com os nomes dos personagens e dos respectivos atores
 theoffice_personagens <-
   readxl::read_excel("data/the_office_series.xls", 
                      sheet = "elenco_personagens") %>%
@@ -72,7 +72,7 @@ theoffice_personagens <-
 
 ### A Série
 
-**The Office** é uma série americana, originalmente transmitida pela NBC entre 25 de março de 2005 e 16 de maio de 2013, com um total de 188 episódios[^4]. A série, uma adaptação do programa britânico de mesmo nome, é exibida em formato de *pseudodocumentário*, e retrata o cotidiano dos funcionários de um escritório filial da *Dunder Mifflin Paper Company*, uma empresa que vende papel localizada na cidade de Scranton, na Pensilvânia. A série venceu 51 prêmios das 193 indicações que recebeu, entre elas consta, principalmente, 1 *Golden Globes* (2006), 2 *Screen Actors Guild Awards* (2007 e 2008) e 5 *Primetime Emmy Awards* (2006, 2007, 2009 e 2013), incluindo melhor série de comédia.
+**The Office** é uma série americana, originalmente transmitida pela NBC entre 25 de março de 2005 e 16 de maio de 2013, com um total de 188 episódios[^4]. A série, uma adaptação do programa britânico de mesmo nome, é exibida em formato de *pseudodocumentário*, e retrata o cotidiano dos funcionários de um escritório filial da *Dunder Mifflin Paper Company*, uma empresa que vende papel localizada na cidade de Scranton, na Pensilvânia. **The Office** é vencedora de 51 prêmios das 193 indicações que recebeu, entre elas, 1 *Golden Globes* (2006), 2 *Screen Actors Guild Awards* (2007 e 2008) e 5 *Primetime Emmy Awards* (2006, 2007, 2009 e 2013), incluindo melhor série de comédia.
 
 <div class="panelset">
 
@@ -183,7 +183,7 @@ theoffice_dados %>%
 
 ### Audiência[^5]
 
-Em 2019, **The Office** superou *Friends* como a série mais assistida da *Netflix* nos Estados Unidos.[^6] Segundo dados revelados por Scott Lazerson, executivo da empresa de *streaming*, o seriado protagonizado por Steve Carrel acumulou um total de 52,98 bilhões de minutos assistidos, contra 42,6 bilhões de *Friends*. Apesar do êxito nos dias atuais, **The Office** nunca foi um sucesso de audiência quando exibida nos EUA pela NBC. O programa quase foi cancelado entre a segunda e terceira temporada e só foi salvo por suas boas vendas no iTunes.
+Em 2019, **The Office** superou *Friends* como a série mais assistida da *Netflix* nos Estados Unidos.[^6] Segundo dados revelados por Scott Lazerson, executivo da empresa de *streaming*, o seriado protagonizado por Steve Carrel acumulou um total de 52,98 bilhões de minutos assistidos, contra 42,6 bilhões de *Friends*. Apesar do êxito nos dias atuais, **The Office** nunca foi um sucesso de audiência quando exibida nos EUA pela NBC. O programa, quase cancelado entre a segunda e a terceira temporada, só foi salvo por suas boas vendas no iTunes.
 
 Conforme mostra a *Figura 3*, a audiência média de todas as temporadas do seriado não ultrapassa os 9 milhões de telespectadores, sendo a quinta e a nona (e última) temporada as com melhor e pior média - 8.76 e 4,14 milhões de telespctadores, respectivamente. É possível observar, após a saída de Steve Carrel do elenco, ao final da 7ª temporada, uma queda bastante considerável na audiência média das últimas duas temporadas.
 
@@ -309,7 +309,7 @@ Nele, Dwight encena um incêndio no escritório para testar as habilidades de se
 
 ### Melhores episódios
 
-Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 43ª posição com 8.9 estrelas. Nas avaliações dos usuários do IMDb, a sequência da 3ª, a 4ª e a 5ª temporadas como as três melhores da série, obtendo, respectivamente, 8.59, 8.56 e 8.49 estrelas; por outro lado, a 8ª temporada recebeu a menor avaliação, com 7.58 estrelas. A *Figura 5* apresenta a avaliação média para todas as temporadas.
+Entre todos os programas de TV avaliados pelo site IMDb, **The Office** ocupa a 24ª posição com 8.9 estrelas[^8]. Nas avaliações dos usuários do IMDb, a sequência da 3ª, a 4ª e a 5ª temporadas como as três melhores da série, obtendo, respectivamente, 8.59, 8.56 e 8.49 estrelas; por outro lado, a 8ª temporada recebeu a menor avaliação, com 7.58 estrelas. A *Figura 5* apresenta a avaliação média para todas as temporadas.
 
 <div class="panelset">
 
@@ -851,3 +851,5 @@ Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. *R Markdown Cookbook*
 [^6]: [The Office ultrapassa Friends como a série mais vista da Netflix nos EUA](https://entretenimento.uol.com.br/noticias/redacao/2019/10/29/the-office-ultrapassa-friends-como-a-serie-mais-vista-da-netflix-nos-eua.htm)
 
 [^7]: “Stanley, você esmaga sua mulher no sexo e seu coração não presta.”
+
+[^8]: Dados coletados no dia 11 de dezembro de 2021, [neste link](https://www.imdb.com/chart/tvmeter/?ref_=tt_ov_pop).
