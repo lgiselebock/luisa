@@ -1,0 +1,19 @@
+
+blockquote {
+    max-width: 100%;
+    background: #cdd5e7;
+}
+
+
+.measure-wide, form fieldset, .post-body ul:not(.panel-tabs), .post-body ol, .post-body dl, .page-body ul:not(.panel-tabs), .page-body ol, .page-body dl, .post-body blockquote, .page-body blockquote {
+    max-width: 100%;
+}
+
+body, li, ul, html{
+   line-height: 1.5; !important
+}
+
+b, strong{
+    font-weight: bold; !important
+    background-color: lavender; !important
+}
