@@ -422,7 +422,7 @@ theoffice_dados %>%
 
 ***Dinner Party*** é o 9º episódio da 4ª temporada, exibido em 10 de abril de 2008. Dirigido por Paul Feig e escrito por Gene Stupnitsky e Lee Eisenberg é [o único roteiro da série que não foi reescrito](https://rollingstone.uol.com.br/noticia/conheca-episodio-perfeito-de-office-o-unico-cujo-roteiro-nao-foi-reescrito/). O episódio mostra a realização de um sonho de Michael Scott: fazer com que o casal Jim e Pam aceitasse um convite para jantar na casa dele. Andy e Angela também são convidados, Dwight (com ciúmes) consegue entrar de penetra com uma companheira (antiga babá e, por vezes, amante dele). O episódio inteiro gira em torno dos personagens anteriormente citados e Jan, companheira de Michael, na casa do casal.
 
-Considerado pela produção e elenco como o “episódio perfeito,” é repleto de momentos extremamente engraçados e (muito) constrangedores. É um dos mais adorados pelos fãs da série, mas, na época em que foi exibido, o público não aceitou bem a ideia. Segundo o diretor Paul Feig:
+Considerado pela produção e elenco como o “episódio perfeito”, é repleto de momentos extremamente engraçados e (muito) constrangedores. É um dos mais adorados pelos fãs da série, mas, na época em que foi exibido, o público não aceitou bem a ideia. Segundo o diretor Paul Feig:
 
 <br>
 
@@ -730,7 +730,7 @@ Nascida em 2005 e encerrada em 2013, **The Office** conquista novos fãs até os
 
 ### Referências
 
-Este texto foi elaborado com o R (R Core Team 2021) e os pacotes: `{dplyr}` (Wickham, François, et al. 2021), `{extrafont}` (Winston Chang 2014), `{ggplot2}` (Wickham, Chang, et al. 2021; Wickham 2016), `{janitor}` (Firke 2021), `{magrittr}` (Bache and Wickham 2020), `{readr}` (Wickham and Hester 2021), `{readxl}` (Wickham and Bryan 2019), `{rmarkdown}` (Allaire et al. 2021; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), `{tidyr}` (Wickham 2021a), `{tidyverse}` (Wickham 2021b; Wickham et al. 2019) e `{xaringanExtra}` (Aden-Buie and Warkentin 2021).
+Este texto foi elaborado com o R (R Core Team 2021) e os pacotes: `{dplyr}` (Wickham et al. 2022), `{extrafont}` (Winston Chang 2014), `{ggplot2}` (Wickham et al. 2021; Wickham 2016), `{janitor}` (Firke 2021), `{magrittr}` (Bache and Wickham 2022), `{readr}` (Wickham, Hester, and Bryan 2022), `{readxl}` (Wickham and Bryan 2019), `{rmarkdown}` (Allaire et al. 2021; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), `{tidyr}` (Wickham and Girlich 2022), `{tidyverse}` (Wickham 2021; Wickham et al. 2019) e `{xaringanExtra}` (Aden-Buie and Warkentin 2021).
 
 <br>
 
@@ -754,7 +754,7 @@ Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron A
 
 <div id="ref-R-magrittr" class="csl-entry">
 
-Bache, Stefan Milton, and Hadley Wickham. 2020. *Magrittr: A Forward-Pipe Operator for r*. <https://CRAN.R-project.org/package=magrittr>.
+Bache, Stefan Milton, and Hadley Wickham. 2022. *Magrittr: A Forward-Pipe Operator for r*. <https://CRAN.R-project.org/package=magrittr>.
 
 </div>
 
@@ -776,15 +776,9 @@ Wickham, Hadley. 2016. *Ggplot2: Elegant Graphics for Data Analysis*. Springer-V
 
 </div>
 
-<div id="ref-R-tidyr" class="csl-entry">
-
-———. 2021a. *Tidyr: Tidy Messy Data*. <https://CRAN.R-project.org/package=tidyr>.
-
-</div>
-
 <div id="ref-R-tidyverse" class="csl-entry">
 
-———. 2021b. *Tidyverse: Easily Install and Load the Tidyverse*. <https://CRAN.R-project.org/package=tidyverse>.
+———. 2021. *Tidyverse: Easily Install and Load the Tidyverse*. <https://CRAN.R-project.org/package=tidyverse>.
 
 </div>
 
@@ -802,19 +796,25 @@ Wickham, Hadley, and Jennifer Bryan. 2019. *Readxl: Read Excel Files*. <https://
 
 <div id="ref-R-ggplot2" class="csl-entry">
 
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. *Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics*. <https://CRAN.R-project.org/package=ggplot2>.
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. *Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics*.
 
 </div>
 
 <div id="ref-R-dplyr" class="csl-entry">
 
-Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2021. *Dplyr: A Grammar of Data Manipulation*. <https://CRAN.R-project.org/package=dplyr>.
+Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2022. *Dplyr: A Grammar of Data Manipulation*. <https://CRAN.R-project.org/package=dplyr>.
+
+</div>
+
+<div id="ref-R-tidyr" class="csl-entry">
+
+Wickham, Hadley, and Maximilian Girlich. 2022. *Tidyr: Tidy Messy Data*. <https://CRAN.R-project.org/package=tidyr>.
 
 </div>
 
 <div id="ref-R-readr" class="csl-entry">
 
-Wickham, Hadley, and Jim Hester. 2021. *Readr: Read Rectangular Text Data*. <https://CRAN.R-project.org/package=readr>.
+Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2022. *Readr: Read Rectangular Text Data*. <https://CRAN.R-project.org/package=readr>.
 
 </div>
 
@@ -840,7 +840,7 @@ Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. *R Markdown Cookbook*
 
 [^1]: Dados coletados até o dia 07 de novembro de 2021, às 17:43, [neste link](https://www.imdb.com/title/tt0386676/).
 
-[^2]: O arquivo .xls está disponível [neste link](https://github.com/lgiselebock/luisa/tree/blog/content/blog/2021-11-13-the-office/data). Nesta pasta, há, também, dois arquivos .rds já tratados e que podem ser lidos com o pacote `{readr}` (Wickham and Hester 2021).
+[^2]: O arquivo .xls está disponível [neste link](https://github.com/lgiselebock/luisa/tree/main/content/blog/2021-12-12-the-office/data). Nesta pasta, há, também, dois arquivos .rds já tratados e que podem ser lidos com o pacote `{readr}` (Wickham, Hester, and Bryan 2022).
 
 [^3]: A fonte utilizada está disponível em: [dafontfree.net/staffmeeting-plain](https://www.dafontfree.net/staffmeeting-plain/f178453.htm)
 
