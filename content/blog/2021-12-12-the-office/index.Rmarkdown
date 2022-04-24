@@ -71,7 +71,7 @@ theoffice_personagens <-
   rename(elenco_nome = elenco)
 
 # lê a tabela de fontes e registra no R (somente para usuários do Windows)
-# extrafont::loadfonts(device = "win") 
+extrafont::loadfonts(device = "win")
 ```
 
 ### A Série

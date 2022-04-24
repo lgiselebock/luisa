@@ -67,7 +67,7 @@ theoffice_personagens <-
   rename(elenco_nome = elenco)
 
 # lê a tabela de fontes e registra no R (somente para usuários do Windows)
-# extrafont::loadfonts(device = "win") 
+extrafont::loadfonts(device = "win")
 ```
 
 ### A Série
@@ -730,7 +730,7 @@ Nascida em 2005 e encerrada em 2013, **The Office** conquista novos fãs até os
 
 ### Referências
 
-Este texto foi elaborado com o R (R Core Team 2021) e os pacotes: `{dplyr}` (Wickham et al. 2022), `{extrafont}` (Winston Chang 2014), `{ggplot2}` (Wickham et al. 2021; Wickham 2016), `{janitor}` (Firke 2021), `{magrittr}` (Bache and Wickham 2022), `{readr}` (Wickham, Hester, and Bryan 2022), `{readxl}` (Wickham and Bryan 2019), `{rmarkdown}` (Allaire et al. 2021; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), `{tidyr}` (Wickham and Girlich 2022), `{tidyverse}` (Wickham 2021; Wickham et al. 2019) e `{xaringanExtra}` (Aden-Buie and Warkentin 2021).
+Este texto foi elaborado com o R (R Core Team 2022) e os pacotes: `{dplyr}` (Wickham et al. 2022), `{extrafont}` (Winston Chang 2014), `{ggplot2}` (Wickham et al. 2021; Wickham 2016), `{janitor}` (Firke 2021), `{magrittr}` (Bache and Wickham 2022), `{readr}` (Wickham, Hester, and Bryan 2022), `{readxl}` (Wickham and Bryan 2022), `{rmarkdown}` (Allaire et al. 2022; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), `{tidyr}` (Wickham and Girlich 2022), `{tidyverse}` (Wickham 2021; Wickham et al. 2019) e `{xaringanExtra}` (Aden-Buie and Warkentin 2021).
 
 <br>
 
@@ -748,7 +748,7 @@ Aden-Buie, Garrick, and Matthew T. Warkentin. 2021. *xaringanExtra: Extras and E
 
 <div id="ref-R-rmarkdown" class="csl-entry">
 
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. *Rmarkdown: Dynamic Documents for r*. <https://CRAN.R-project.org/package=rmarkdown>.
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2022. *Rmarkdown: Dynamic Documents for r*. <https://CRAN.R-project.org/package=rmarkdown>.
 
 </div>
 
@@ -766,7 +766,7 @@ Firke, Sam. 2021. *Janitor: Simple Tools for Examining and Cleaning Dirty Data*.
 
 <div id="ref-R-base" class="csl-entry">
 
-R Core Team. 2021. *R: A Language and Environment for Statistical Computing*. Vienna, Austria: R Foundation for Statistical Computing. <https://www.R-project.org/>.
+R Core Team. 2022. *R: A Language and Environment for Statistical Computing*. Vienna, Austria: R Foundation for Statistical Computing. <https://www.R-project.org/>.
 
 </div>
 
@@ -790,13 +790,13 @@ Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino 
 
 <div id="ref-R-readxl" class="csl-entry">
 
-Wickham, Hadley, and Jennifer Bryan. 2019. *Readxl: Read Excel Files*. <https://CRAN.R-project.org/package=readxl>.
+Wickham, Hadley, and Jennifer Bryan. 2022. *Readxl: Read Excel Files*. <https://CRAN.R-project.org/package=readxl>.
 
 </div>
 
 <div id="ref-R-ggplot2" class="csl-entry">
 
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. *Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics*.
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2021. *Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics*. <https://CRAN.R-project.org/package=ggplot2>.
 
 </div>
 
