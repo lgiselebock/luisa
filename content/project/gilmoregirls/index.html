@@ -1,0 +1,86 @@
+---
+title: "Pacote gilmoregirls" 
+excerpt: "Autora e mantenedora do pacote [gilmoregirls](https://lgiselebock.github.io/gilmoregirls/), que disponibiliza as informações a respeito de todos os episódios do seriado **Gilmore Girls**."
+subtitle: "Autora e mantenedora do pacote gilmoregirls"
+weight: 11
+author: "Luisa Gisele Böck"
+date: "2022-06-26"
+draft: false
+categories:
+  - Pacotes
+# layout options: single or single-sidebar
+layout: single
+links:
+- icon: link
+  icon_pack: fas
+  name: Link
+  url: https://lgiselebock.github.io/gilmoregirls/
+- icon: github
+  icon_pack: fab
+  name: GitHub
+  url: https://github.com/lgiselebock/gilmoregirls
+---
+
+
+
+<p><a href='https://github.com/lgiselebock/gilmoregirls'><img src='hex-featured.png' align="right" height="200" alt='...'/></a></p>
+<p>O pacote <a href="https://lgiselebock.github.io/gilmoregirls/">gilmoregirls</a> disponibiliza as informações de todos os episódios do seriado <strong>Gilmore Girls</strong>.</p>
+<div id="exemplo" class="section level5">
+<h5>Exemplo:</h5>
+<pre class="r"><code>gilmoregirls::gilmoregirls_info |&gt; 
+  dplyr::glimpse()</code></pre>
+<pre><code>## Rows: 153
+## Columns: 10
+## $ index             &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1…
+## $ season            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ episode           &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1…
+## $ title             &lt;chr&gt; &quot;Pilot&quot;, &quot;The Lorelais&#39; First Day at Chilton&quot;, &quot;Kill…
+## $ directed_by       &lt;chr&gt; &quot;Lesli Linka Glatter&quot;, &quot;Arlene Sanford&quot;, &quot;Adam Nimoy…
+## $ written_by        &lt;chr&gt; &quot;Amy Sherman-Palladino&quot;, &quot;Amy Sherman-Palladino&quot;, &quot;J…
+## $ air_date          &lt;chr&gt; &quot;October 5, 2000 &quot;, &quot;October 12, 2000 &quot;, &quot;October 19…
+## $ us_views_millions &lt;dbl&gt; 5.03, 3.40, 2.89, 3.93, 3.88, 3.73, 3.45, 3.80, 3.62…
+## $ imdb_rating       &lt;dbl&gt; 8.1, 8.0, 7.8, 7.9, 7.8, 8.5, 8.4, 8.1, 8.7, 8.3, 7.…
+## $ description       &lt;chr&gt; &quot;Rory is accepted into the elite Chilton prep school…</code></pre>
+<pre class="r"><code>gilmoregirls::gilmoregirls_info |&gt; 
+  dplyr::mutate(season = as.factor(season)) |&gt; 
+  ggplot2::ggplot() +
+  ggplot2::aes(
+    x = index,
+    y = us_views_millions,
+    fill = season,
+    width = 0.5
+  ) +
+  ggplot2::geom_col() +
+  ggplot2::labs(
+    x = &quot;Episodes&quot;,
+    y = &quot;Audience (millions) in the USA&quot;,
+    fill = &quot;Season&quot;
+  ) +
+  ggplot2::scale_x_continuous(breaks = seq(0, 153, 20)) +
+  ggplot2::scale_y_continuous(
+    limits = c(0, 8), 
+    breaks = seq(0, 8, 2)
+  ) +
+  ggplot2::scale_fill_manual(
+    values = c(
+      &quot;#d4b9a9&quot;,
+      &quot;#5271ff&quot;,
+      &quot;#52c5c7&quot;,
+      &quot;#c131e8&quot;,
+      &quot;#fc9b5e&quot;,
+      &quot;#ffdd49&quot;,
+      &quot;#cd570f&quot;
+    )
+  ) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(
+    panel.grid.major.x = ggplot2::element_blank(),
+    panel.grid.minor = ggplot2::element_blank(),
+    legend.position = c(1.06, 1.06),
+    legend.justification = c(&quot;right&quot;, &quot;top&quot;),
+    legend.box.just = &quot;right&quot;,
+    plot.margin = ggplot2::unit(c(1, 1, 1, 1), &quot;cm&quot;),
+    text = ggplot2::element_text(size = 10)
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
