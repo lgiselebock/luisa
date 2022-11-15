@@ -95,6 +95,10 @@ enableEmoji = true
       icon_pack = "fab"
       url       = "https://twitter.com/lgiselebock"
   [[params.social]]
+      icon      = "mastodon" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://ursal.zone/@lgiselebock"
+  [[params.social]]
       icon      = "envelope" # icon name without the 'fa-'
       icon_pack = "far"
       url       = "mailto:luisagisele@gmail.com"
@@ -130,6 +134,11 @@ enableEmoji = true
     title = "Projetos"
     url = "/project/"
     weight = 4
+  [[menu.header]]
+    name = "Apresentações"
+    title = "Apresentações"
+    url = "/talk/"
+    weight = 5
 # [[menu.header]]
 #   name = "A collection"
 #   title = "A collection"
