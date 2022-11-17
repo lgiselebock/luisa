@@ -8,7 +8,7 @@ show_intro: true
 intro: |
   Cachoeirense de nascimento e santa-mariense de coração, atualmente sou estudante de Ciências Econômicas na Universidade Federal de Santa Maria ([UFSM](https://www.ufsm.br/)).
   
-show_outro: true
+show_outro: false
 outro: |
   <i class="fas fa-glass-cheers pr2"></i>Thanks to [Alison Hill](https://twitter.com/apreshill/) for creating Hugo Apéro!
 ---
