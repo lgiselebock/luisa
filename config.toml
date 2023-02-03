@@ -106,6 +106,10 @@ enableEmoji = true
       icon      = "chart-bar" # icon name without the 'fa-'
       icon_pack = "far"
       url       = "https://public.tableau.com/app/profile/lgiselebock"
+  [[params.social]]
+      icon      = "orcid" # icon name without the 'fa-'
+      icon_pack = "far"
+      url       = "https://orcid.org/0000-0002-5704-9361"
 
 [taxonomies]
   category = "categories"
