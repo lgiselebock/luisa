@@ -11,6 +11,14 @@ excerpt: Apresentação na 37ª JAI da UFSM
 featured: true
 layout: single
 links:
+- icon: book
+  icon_pack: fas
+  name: Anais
+  url: https://portal.ufsm.br/jai/trabalho/anais.html;jsessionid=02794b8da61090040e811da67955
+- icon: file
+  icon_pack: far
+  name: Resumo
+  url: https://github.com/lgiselebock/2022-jai-ufsm/blob/master/resumos/resumo-jai-luisa-gisele-bock.pdf
 - icon: images
   icon_pack: far
   name: Slides
