@@ -11,6 +11,10 @@ excerpt: Apresentação no X Seminário de Jovens Pesquisadores em Economia e De
 featured: true
 layout: single
 links:
+- icon: book
+  icon_pack: fas
+  name: Anais
+  url: https://www.ufsm.br/app/uploads/sites/533/2023/11/Anais-do-X-SJPED-2023.pdf
 - icon: images
   icon_pack: far
   name: Slides
